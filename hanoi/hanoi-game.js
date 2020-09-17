@@ -4,7 +4,7 @@ class HanoiGame {
   }
 
   isValidMove(startTowerIdx, endTowerIdx) {
-    if (endTowerIdx === []) {
+    if (this.towers[endTowerIdx].length === 0) {
       return true;
     }
     return false;
@@ -52,4 +52,6 @@ class HanoiGame {
   }
 }
 
+const gameWithEmptyTowers = new HanoiGame([[1, 2, 3], [], []])
+console.log(gameWithEmptyTowers.isValidMove(0, 2))
 module.exports = HanoiGame;

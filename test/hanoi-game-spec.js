@@ -40,7 +40,7 @@ describe("HanoiGame", () => {
         // Move a block on tower 0 to tower 2
         expect(gameWithEmptyTowers.isValidMove(0, 2)).to.be.true;
       });
-
+          //START HERE
       it("should ensure that the last disk value in the starting tower is smaller than the last disk value in the ending tower", () => {
         const gameWithFullTowers = new HanoiGame([[1], [2], [3]]);
         // Move a block on tower 0 to tower 1
