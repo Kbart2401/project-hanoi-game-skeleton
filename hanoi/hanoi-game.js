@@ -1,7 +1,14 @@
 class HanoiGame {
-  constructor() {}
+  constructor(towers = [[3, 2, 1], [], []]) {
+    this.towers = towers;
+  }
 
-  isValidMove(startTowerIdx, endTowerIdx) {}
+  isValidMove(startTowerIdx, endTowerIdx) {
+    if (endTowerIdx === []) {
+      return true;
+    }
+    return false;
+  }
 
   move(startTowerIdx, endTowerIdx) {}
 
@@ -15,9 +22,9 @@ class HanoiGame {
 
   promptMove(reader, callback) {
     this.print();
-    reader.question("Enter a starting tower: ", start => {
+    reader.question("Enter a starting tower: ", (start) => {
       const startTowerIdx = parseInt(start);
-      reader.question("Enter an ending tower: ", end => {
+      reader.question("Enter an ending tower: ", (end) => {
         const endTowerIdx = parseInt(end);
         callback(startTowerIdx, endTowerIdx);
       });
