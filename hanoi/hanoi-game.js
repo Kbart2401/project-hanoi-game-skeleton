@@ -4,11 +4,25 @@ class HanoiGame {
   }
 
   isValidMove(startTowerIdx, endTowerIdx) {
-    if (this.towers[endTowerIdx].length === 0) {
-      return true;
+    const firstTower = this.towers[startTowerIdx];
+    const endTower = this.towers[endTowerIdx];
+    if(startTowerIdx >= 3 || endTowerIdx >= 3) {
+      return false;
     }
-    return false;
-  }
+    if (this.towers[endTowerIdx].length === 0 && firstTower.length !== 0 || 
+      firstTower[firstTower.length - 1] < endTower[endTower.length - 1]) {
+      return true;
+    } else {
+      if (startTowerIdx === endTowerIdx || 
+        firstTower.length === 0 || 
+        !endTower || !firstTower || 
+        firstTower[firstTower.length - 1] > endTower[endTower.length - 1])
+      
+        return false;
+
+      }
+    }
+  
 
   move(startTowerIdx, endTowerIdx) {}
 
